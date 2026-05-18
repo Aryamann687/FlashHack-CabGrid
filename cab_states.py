@@ -1,6 +1,10 @@
 import time
 
 
+# Store completed rides
+ride_history = []
+
+
 class Cab:
 
     def __init__(self, cab_id, location):
@@ -26,10 +30,11 @@ class Cab:
 
         print(f"\nCab {self.cab_id} assigned to customer at {customer_location}")
 
-        # Cab assigned
-        #skip repeated dispatch state
+        # Avoid repeated dispatch transition
         if self.state != "DISPATCHED":
+
             self.change_state("DISPATCHED")
+
         time.sleep(1)
 
         print("Passenger confirmation pending...")
@@ -52,6 +57,11 @@ class Cab:
 
         self.change_state("COMPLETED")
         time.sleep(1)
+
+        # Store ride history
+        ride_history.append(
+            f"Cab {self.cab_id} completed ride to {customer_location}"
+        )
 
         # Back to idle state
         self.change_state("IDLE")
@@ -93,3 +103,48 @@ def check_surge_pricing(cabs):
     else:
 
         print("Normal Pricing")
+
+
+def display_dashboard(cabs):
+
+    total_cabs = len(cabs)
+
+    idle_cabs = 0
+    busy_cabs = 0
+
+    for cab in cabs:
+
+        if cab.state == "IDLE":
+
+            idle_cabs += 1
+
+        elif cab.state in ["DISPATCHED", "WAITING", "EN_ROUTE"]:
+
+            busy_cabs += 1
+
+    print("\n========= SYSTEM DASHBOARD =========\n")
+
+    print(f"Total Cabs       : {total_cabs}")
+    print(f"Idle Cabs        : {idle_cabs}")
+    print(f"Busy Cabs        : {busy_cabs}")
+
+    if (busy_cabs / total_cabs) * 100 >= 60:
+
+        print("Surge Pricing    : ACTIVE")
+
+    else:
+
+        print("Surge Pricing    : NORMAL")
+
+    print("\n====================================\n")
+
+
+def display_ride_history():
+
+    print("\n========= RIDE HISTORY =========\n")
+
+    for ride in ride_history:
+
+        print(ride)
+
+    print("\n================================\n")

@@ -1,6 +1,8 @@
 from cab_states import Cab
 from cab_states import display_all_cabs
 from cab_states import check_surge_pricing
+from cab_states import display_dashboard
+from cab_states import display_ride_history
 
 
 # Creating cabs
@@ -41,6 +43,11 @@ cab4.change_state("DISPATCHED")
 check_surge_pricing(cabs)
 
 
+# Display dashboard
+
+display_dashboard(cabs)
+
+
 # Completing rides
 
 cab2.assign_ride("P")
@@ -51,3 +58,8 @@ cab4.assign_ride("T")
 # Final state table
 
 display_all_cabs(cabs)
+
+
+# Ride history
+
+display_ride_history()
