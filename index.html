@@ -1,53 +1,204 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CABGRID v3</title>
-<link rel="stylesheet" href="style.css">
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>CABGRID v4</title>
+
+    <link rel="stylesheet" href="style.css">
+
 </head>
+
 <body>
-<header>
-<h1> CABGRID v3</h1>
-<p>Real-Time Cab Dispatch Optimizer</p>
-</header>
-<div class="container">
-<!-- LEFT PANEL -->
-<div class="left-panel">
-<div class="card">
-<h2>Ride Request</h2>
-<input type="text" id="requestNode" placeholder="Enter
-destination node">
-<button onclick="dispatchCab()">
- Dispatch Cab
-</button>
-</div>
-<div class="card">
-<h2>System Dashboard</h2>
-<div class="stats">
-<p>Total Cabs: <span id="totalCabs">5</span></p>
-<p>Idle Cabs: <span id="idleCabs">5</span></p>
-<p>Busy Cabs: <span id="busyCabs">0</span></p>
-<p>Surge Pricing: <span id="surge">NORMAL</span></p>
-</div>
-</div>
-<div class="card">
-<h2>Cab Process States</h2>
-<div id="cabStatesPanel"></div>
-</div>
-<div class="card">
-<h2>Ride History</h2>
-<ul id="rideHistory"></ul>
-</div>
-</div>
-<!-- RIGHT PANEL -->
-<div class="right-panel">
-<div class="card graph-card">
-<h2>City Graph</h2>
-<canvas id="graphCanvas" width="800" height="600"></canvas>
-</div>
-</div>
-</div>
-<script src="script.js"></script>
+
+    <header>
+
+        <h1>🚖 CABGRID v4</h1>
+
+        <p>
+            Real-Time Cab Dispatch Optimizer
+            using BFS, DFS & OS Process States
+        </p>
+
+    </header>
+
+
+    <div class="container">
+
+
+        <!-- LEFT PANEL -->
+
+        <div class="left-panel">
+
+
+            <!-- REQUEST -->
+
+            <div class="card">
+
+                <h2>Ride Request</h2>
+
+                <input
+                    type="text"
+                    id="requestNode"
+                    placeholder="Enter Destination Node"
+                >
+
+                <button onclick="dispatchCab()">
+                    Dispatch Cab
+                </button>
+
+            </div>
+
+
+            <!-- DASHBOARD -->
+
+            <div class="card">
+
+                <h2>System Dashboard</h2>
+
+                <div class="stats">
+
+                    <p>
+                        🚕 Total Cabs:
+                        <span id="totalCabs">5</span>
+                    </p>
+
+                    <p>
+                        🟢 Idle Cabs:
+                        <span id="idleCabs">5</span>
+                    </p>
+
+                    <p>
+                        🔴 Busy Cabs:
+                        <span id="busyCabs">0</span>
+                    </p>
+
+                    <p>
+                        ⚡ Surge Pricing:
+                        <span id="surge">NORMAL</span>
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- PERFORMANCE -->
+
+            <div class="card">
+
+                <h2>Dispatch Performance</h2>
+
+                <div class="performance-box">
+
+                    <p>
+                        ✅ BFS Nodes Checked:
+                        <span id="bfsNodes">0</span>
+                    </p>
+
+                    <p>
+                        ⏱ BFS Time:
+                        <span id="bfsTime">0 ms</span>
+                    </p>
+
+                    <hr>
+
+                    <p>
+                        ❌ Brute Force Nodes Checked:
+                        <span id="bruteNodes">0</span>
+                    </p>
+
+                    <p>
+                        ⏱ Brute Force Time:
+                        <span id="bruteTime">0 ms</span>
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- CAB STATES -->
+
+            <div class="card">
+
+                <h2>Cab Process States</h2>
+
+                <div id="cabStatesPanel"></div>
+
+            </div>
+
+
+            <!-- HISTORY -->
+
+            <div class="card">
+
+                <h2>Ride History</h2>
+
+                <ul id="rideHistory"></ul>
+
+            </div>
+
+        </div>
+
+
+        <!-- RIGHT PANEL -->
+
+        <div class="right-panel">
+
+
+            <!-- GRAPH -->
+
+            <div class="card graph-card">
+
+                <h2>City Graph Visualization</h2>
+
+                <canvas
+                    id="graphCanvas"
+                    width="1100"
+                    height="760">
+                </canvas>
+
+            </div>
+
+
+            <!-- TRAVERSALS -->
+
+            <div class="card traversal-card">
+
+                <h2>Traversal Output</h2>
+
+                <p><strong>BFS Traversal:</strong></p>
+
+                <div id="bfsTraversal"
+                     class="traversal-output"></div>
+
+                <br>
+
+                <p><strong>DFS Traversal:</strong></p>
+
+                <div id="dfsTraversal"
+                     class="traversal-output"></div>
+
+                <br>
+
+                <p><strong>Brute Force Traversal:</strong></p>
+
+                <div id="bruteTraversal"
+                     class="traversal-output"></div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
 </body>
 </html>
