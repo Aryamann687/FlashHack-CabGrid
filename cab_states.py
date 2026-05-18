@@ -1,3 +1,13 @@
+"""
+CabGrid OS Module
+
+Implements:
+- Cab process lifecycle
+- State transitions
+- Surge pricing
+- Ride dashboard
+- Ride history tracking
+"""
 import time
 
 
