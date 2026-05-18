@@ -1,0 +1,255 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #020617;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+
+/* HEADER */
+
+header {
+    width: 100%;
+    padding: 20px 40px;
+    border-bottom: 2px solid #0ea5e9;
+    background: #0f172a;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+header h1 {
+    color: #38bdf8;
+    font-size: 42px;
+}
+
+header p {
+    margin-top: 8px;
+    color: #cbd5e1;
+    font-size: 18px;
+}
+
+
+/* MAIN LAYOUT */
+
+.container {
+
+    display: flex;
+    gap: 25px;
+
+    padding: 25px;
+
+    height: calc(100vh - 110px);
+}
+
+
+/* LEFT PANEL */
+
+.left-panel {
+
+    width: 350px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 20px;
+
+    overflow-y: auto;
+}
+
+
+/* RIGHT PANEL */
+
+.right-panel {
+
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* CARDS */
+
+.card {
+
+    background: #1e293b;
+
+    border-radius: 20px;
+
+    padding: 22px;
+
+    box-shadow:
+        0 0 10px rgba(0,255,255,0.2),
+        0 0 20px rgba(0,255,255,0.08);
+
+    border: 1px solid rgba(0,255,255,0.15);
+}
+
+
+.card h2 {
+
+    color: #38bdf8;
+
+    margin-bottom: 20px;
+
+    font-size: 30px;
+}
+
+
+/* INPUT */
+
+input {
+
+    width: 100%;
+
+    padding: 14px;
+
+    border-radius: 10px;
+
+    border: none;
+
+    outline: none;
+
+    margin-bottom: 15px;
+
+    font-size: 16px;
+}
+
+
+/* BUTTON */
+
+button {
+
+    width: 100%;
+
+    padding: 14px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background: linear-gradient(
+        90deg,
+        #06b6d4,
+        #3b82f6
+    );
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+button:hover {
+
+    transform: scale(1.03);
+
+    box-shadow:
+        0 0 15px cyan;
+}
+
+
+/* DASHBOARD */
+
+.stats {
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 16px;
+}
+
+.stats p {
+
+    font-size: 20px;
+}
+
+
+/* CAB STATE PANEL */
+
+#cabStatesPanel {
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 12px;
+}
+
+
+/* RIDE HISTORY */
+
+#rideHistory {
+
+    list-style: none;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 10px;
+
+    max-height: 250px;
+
+    overflow-y: auto;
+}
+
+#rideHistory li {
+
+    background: #334155;
+
+    padding: 12px;
+
+    border-radius: 10px;
+
+    font-size: 15px;
+}
+
+
+/* GRAPH PANEL */
+
+.graph-card {
+
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+}
+
+
+canvas {
+
+    width: 100%;
+
+    height: 100%;
+
+    min-height: 650px;
+
+    background: #000814;
+
+    border-radius: 20px;
+
+    margin-top: 10px;
+}
+
+
+/* SCROLLBAR */
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #0ea5e9;
+    border-radius: 10px;
+}

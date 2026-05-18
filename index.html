@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CABGRID v3</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+<h1> CABGRID v3</h1>
+<p>Real-Time Cab Dispatch Optimizer</p>
+</header>
+<div class="container">
+<!-- LEFT PANEL -->
+<div class="left-panel">
+<div class="card">
+<h2>Ride Request</h2>
+<input type="text" id="requestNode" placeholder="Enter
+destination node">
+<button onclick="dispatchCab()">
+ Dispatch Cab
+</button>
+</div>
+<div class="card">
+<h2>System Dashboard</h2>
+<div class="stats">
+<p>Total Cabs: <span id="totalCabs">5</span></p>
+<p>Idle Cabs: <span id="idleCabs">5</span></p>
+<p>Busy Cabs: <span id="busyCabs">0</span></p>
+<p>Surge Pricing: <span id="surge">NORMAL</span></p>
+</div>
+</div>
+<div class="card">
+<h2>Cab Process States</h2>
+<div id="cabStatesPanel"></div>
+</div>
+<div class="card">
+<h2>Ride History</h2>
+<ul id="rideHistory"></ul>
+</div>
+</div>
+<!-- RIGHT PANEL -->
+<div class="right-panel">
+<div class="card graph-card">
+<h2>City Graph</h2>
+<canvas id="graphCanvas" width="800" height="600"></canvas>
+</div>
+</div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
