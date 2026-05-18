@@ -1,5 +1,5 @@
 class CityGraph:
-    def _init_(self):
+    def __init__(self):
         self.graph = {}
 
     def add_edge(self, u, v):
