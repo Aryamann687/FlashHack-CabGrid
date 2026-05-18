@@ -14,28 +14,40 @@ cab5 = Cab(5, "K")
 cabs = [cab1, cab2, cab3, cab4, cab5]
 
 
-# Initial state table
+# Initial cab states
 
 display_all_cabs(cabs)
 
 
-# Simulating ride requests
+# Simulating active ride requests
 
-print("\n========== RIDE REQUEST 1 ==========\n")
-
-cab2.assign_ride("P")
-
-
-print("\n========== RIDE REQUEST 2 ==========\n")
-
-cab4.assign_ride("M")
+print("\n========== RIDE REQUEST 1 ==========")
+print("Customer Location: P")
+cab2.change_state("DISPATCHED")
 
 
-# Display updated states
+print("\n========== RIDE REQUEST 2 ==========")
+print("Customer Location: M")
+cab3.change_state("DISPATCHED")
 
-display_all_cabs(cabs)
+
+print("\n========== RIDE REQUEST 3 ==========")
+print("Customer Location: T")
+cab4.change_state("DISPATCHED")
 
 
-# Check surge pricing
+# Check surge pricing while rides are active
 
 check_surge_pricing(cabs)
+
+
+# Completing rides
+
+cab2.assign_ride("P")
+cab3.assign_ride("M")
+cab4.assign_ride("T")
+
+
+# Final state table
+
+display_all_cabs(cabs)
